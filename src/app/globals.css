@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+/* Neutral, green and navy values follow the Radix Colors scales; maroon is a school-uniform red. */
+
+[data-mode="dark"] {
+  color-scheme: dark;
+  --bg: #111111;
+  --panel: #191919;
+  --raise: #222222;
+  --line: #313131;
+  --ink: #eeeeee;
+  --muted: #b4b4b4;
+  --ai-soft: #2a2a2a;
+  --ai-strong: #eeeeee;
+  --shadow: rgb(0 0 0 / 0.4);
+  --shadow-strong: rgb(0 0 0 / 0.6);
+  --gloss: rgb(255 255 255 / 0.12);
+  --danger: #ff9592;
+  --danger-soft: #3b1219;
+}
+
+[data-mode="light"] {
+  color-scheme: light;
+  --bg: #ffffff;
+  --panel: #f9f9f9;
+  --raise: #ffffff;
+  --line: #e0e0e0;
+  --ink: #202020;
+  --muted: #646464;
+  --ai-soft: #e8e8e8;
+  --ai-strong: #202020;
+  --shadow: rgb(0 0 0 / 0.06);
+  --shadow-strong: rgb(0 0 0 / 0.12);
+  --gloss: rgb(255 255 255 / 0.7);
+  --danger: #ce2c31;
+  --danger-soft: #feebec;
+}
+
+[data-scheme="forest"][data-mode="dark"] {
+  --you: #30a46c;
+  --on-you: #0e1512;
+  --you-strong: #3dd68c;
+  --you-soft: #132d21;
+  --you-line: #28684a;
+  --ai: #b1f1cb;
+  --highlight: #113b29;
+  --on-highlight: #b1f1cb;
+}
+
+[data-scheme="forest"][data-mode="light"] {
+  --you: #218358;
+  --on-you: #ffffff;
+  --you-strong: #218358;
+  --you-soft: #e6f6eb;
+  --you-line: #8eceaa;
+  --ai: #193b2d;
+  --highlight: #d6f1df;
+  --on-highlight: #193b2d;
+}
+
+[data-scheme="navy"][data-mode="dark"] {
+  --you: #3e63dd;
+  --on-you: #ffffff;
+  --you-strong: #9eb1ff;
+  --you-soft: #182449;
+  --you-line: #3a4f97;
+  --ai: #d6e1ff;
+  --highlight: #1d2e62;
+  --on-highlight: #d6e1ff;
+}
+
+[data-scheme="navy"][data-mode="light"] {
+  --you: #1f2d5c;
+  --on-you: #ffffff;
+  --you-strong: #3a5bc7;
+  --you-soft: #edf2fe;
+  --you-line: #abbdf9;
+  --ai: #1f2d5c;
+  --highlight: #e1e9ff;
+  --on-highlight: #1f2d5c;
+}
+
+[data-scheme="maroon"][data-mode="dark"] {
+  --you: #c9474d;
+  --on-you: #ffffff;
+  --you-strong: #f08a8e;
+  --you-soft: #2a1214;
+  --you-line: #6e2a2e;
+  --ai: #f5c6c8;
+  --highlight: #3d1618;
+  --on-highlight: #f5c6c8;
+  --danger: #ff9a62;
+  --danger-soft: #3a1c0c;
+}
+
+[data-scheme="maroon"][data-mode="light"] {
+  --you: #7a1d21;
+  --on-you: #ffffff;
+  --you-strong: #6a171b;
+  --you-soft: #f8e8e8;
+  --you-line: #e3aeb0;
+  --ai: #501314;
+  --highlight: #f5d9da;
+  --on-highlight: #501314;
+  --danger: #c2410c;
+  --danger-soft: #ffedd5;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-raise: var(--raise);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-you: var(--you);
+  --color-on-you: var(--on-you);
+  --color-you-strong: var(--you-strong);
+  --color-you-soft: var(--you-soft);
+  --color-you-line: var(--you-line);
+  --color-ai: var(--ai);
+  --color-ai-strong: var(--ai-strong);
+  --color-ai-soft: var(--ai-soft);
+  --color-action: var(--you);
+  --color-on-action: var(--on-you);
+  --color-highlight: var(--highlight);
+  --color-on-highlight: var(--on-highlight);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+
+  --radius-panel: 1rem;
+  --radius-card: 0.75rem;
+
+  --shadow-soft: 0 4px 12px var(--shadow);
+  --shadow-lifted: 0 8px 18px var(--shadow-strong);
+  --shadow-pressed: inset 0 2px 6px var(--shadow-strong);
+  --shadow-well: inset 0 2px 5px var(--shadow);
+  --shadow-icon:
+    inset 0 1px 0 var(--gloss), inset 0 -2px 3px var(--shadow), 0 6px 14px -6px var(--you-line),
+    0 2px 4px -1px var(--shadow-strong);
+
+  --font-sans: var(--font-sora);
+  --font-mono: var(--font-jetbrains-mono);
+  --font-display: var(--font-bebas-neue);
+
+  --animate-breathe: breathe 3s ease-in-out infinite;
+  --animate-orbit: spin 1.4s linear infinite;
+  --animate-wave: wave 0.9s ease-in-out infinite;
+  --animate-invite: invite 2s ease-out infinite;
+
+  @keyframes breathe {
+    50% {
+      transform: scale(1.03);
+    }
+  }
+
+  @keyframes invite {
+    from {
+      box-shadow: 0 0 0 0 var(--you-line);
+    }
+    to {
+      box-shadow: 0 0 0 16px transparent;
+    }
+  }
+
+  @keyframes wave {
+    0%,
+    100% {
+      transform: scaleY(0.35);
+    }
+    50% {
+      transform: scaleY(1);
+    }
+  }
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line) transparent;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}

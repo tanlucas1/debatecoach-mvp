@@ -1,0 +1,47 @@
+{
+  "name": "debate-coach",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "vitest run",
+    "format": "prettier --write .",
+    "case-files:check": "tsx scripts/check-case-files.ts",
+    "demo:audio": "tsx --env-file=.env.local scripts/generate-demo-audio.ts",
+    "voices:preview": "tsx --env-file=.env.local scripts/generate-voice-previews.ts"
+  },
+  "dependencies": {
+    "@anam-ai/js-sdk": "^4.27.1",
+    "@anthropic-ai/sdk": "^0.128.0",
+    "@daily-co/daily-js": "^0.92.2",
+    "@google/genai": "^2.24.0",
+    "@streamoji/aitwin": "^0.8.2",
+    "clsx": "^2.1.1",
+    "mammoth": "^1.12.3",
+    "next": "16.3.6",
+    "node-html-parser": "^9.0.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^22.20.4",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.6",
+    "prettier": "^3.9.9",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5",
+    "vitest": "^5.0.1"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
